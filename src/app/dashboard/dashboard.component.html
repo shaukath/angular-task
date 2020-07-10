@@ -52,10 +52,10 @@
                     <div [ngClass]="{'col-lg-6 col-12': isCardView, 'col-lg-3 col-md-3 col-sm-4 col-4': !isCardView}">
                         <img [src]="album.thumbnailUrl" alt="" class="img-thumbnail">
                     </div>
-                    <div [ngClass]="{'col-lg-6 col-12': isCardView, 'col-lg-7 col-md-6 col-sm-4 col-6': !isCardView}" class="my-2">
+                    <div [ngClass]="{'col-lg-6 col-12': isCardView, 'col-lg-7 col-md-6 col-sm-4 col-6': !isCardView}">
                         <span class="dashboard-card">{{album.title}}</span>
                     </div>
-                    <div [ngClass]="{'col-lg-4 col-12': isCardView, 'col-lg-2 col-md-3 col-sm-4 col-4': !isCardView}">
+                    <div [ngClass]="{'col-lg-4 col-12 my-2': isCardView, 'col-lg-2 col-md-3 col-sm-4 col-4 card-btn': !isCardView}">
                         <a href="{{album.url}}" class="dashboard-card" mat-stroked-button target="_blank">Show Image</a>
                     </div>
                 </div>
