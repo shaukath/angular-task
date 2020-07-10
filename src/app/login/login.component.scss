@@ -1,0 +1,59 @@
+@media (max-width: 600px) {
+    .container {
+        padding: 24px 32px;
+    }
+  }
+
+.cover {
+    background-color: #1fc8db;
+    background: linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url(../../assets/images/login_bg.jpg) no-repeat 50% fixed;
+    background-size: cover;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  #cover-caption {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  
+  form:before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: -1;
+    border-radius: 10px;
+  }
+  
+  .login-error {
+      position: fixed;
+      top: 10px;
+      right: 20px;
+  }
+
+  .mat-card {
+    background: linear-gradient(to bottom right,#ffedbc,#b1fff4); 
+  }
+
+  .login-form {
+    mat-form-field {
+        padding: 0 !important;
+    }
+  }
+
+  .mat-raised-button[disabled] {
+    background-color: #a9a9a9;
+    color: #3a3a3a;
+    cursor: not-allowed;
+  }
+
+
+
+  

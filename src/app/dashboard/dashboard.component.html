@@ -1,0 +1,66 @@
+<header class="navbar navbar-expand navbar-dark flex-md-row bd-navbar">
+    <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Bootstrap">
+        <mat-icon>home</mat-icon>
+    </a>
+    <div class="navbar-nav-scroll">
+      <ul class="navbar-nav bd-navbar-nav flex-row">
+        <li class="nav-item">
+          <a class="nav-link active">Home</a>
+        </li>
+      </ul>
+    </div>
+  
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link pl-2 pr-1 mx-1 py-3 my-n2">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link px-1 mx-1 py-3 my-n2 logout" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+</header>
+
+<section class="dashboard">
+    <div class="container">
+        <h1 class="py-4 text-center">Welcome To Dashboard</h1>
+
+        <div class="row search-bar">
+            <mat-form-field class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                <mat-label>Search</mat-label>
+                <input type="text" matInput [(ngModel)]="searchText" placeholder="search here...">
+                <button mat-button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="searchText=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+              </mat-form-field>
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" style="margin-bottom: 1rem;">
+                <button mat-flat-button (click)="changeView()" style="margin-top: 0.75rem;">
+                    <mat-icon aria-hidden="false" aria-label="table_rows icon" *ngIf="isCardView">table_rows</mat-icon>
+                    <mat-icon aria-hidden="false" aria-label="card_view icon" *ngIf="!isCardView">view_module</mat-icon>
+                    {{viewType}} 
+                </button>
+              </div>
+        </div>
+
+        
+
+    <div class="row">
+        <div [ngClass]="{'col-lg-4 col-md-4 col-sm-6 col-12 card-view': isCardView, 'grid-view col-lg-12': !isCardView}"
+            *ngFor="let album of albumsData | filter : searchText; let i=index">
+            <mat-card class="card">
+                <div class="card-body row align-items-center">
+                    <div [ngClass]="{'col-lg-6 col-12': isCardView, 'col-lg-3 col-md-3 col-sm-4 col-4': !isCardView}">
+                        <img [src]="album.thumbnailUrl" alt="" class="img-thumbnail">
+                    </div>
+                    <div [ngClass]="{'col-lg-6 col-12': isCardView, 'col-lg-7 col-md-6 col-sm-4 col-6': !isCardView}" class="my-2">
+                        <span class="dashboard-card">{{album.title}}</span>
+                    </div>
+                    <div [ngClass]="{'col-lg-4 col-12': isCardView, 'col-lg-2 col-md-3 col-sm-4 col-4': !isCardView}">
+                        <a href="{{album.url}}" class="dashboard-card" mat-stroked-button target="_blank">Show Image</a>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+    </div>
+</section>
