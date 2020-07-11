@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
       this.showAlert = true;
       setTimeout(() => {
         this.showAlert = false;
-      }, 40000000);
+      }, 4000);
     }
   }
 
