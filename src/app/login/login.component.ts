@@ -74,6 +74,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  /**
+   * Method to check status of user login
+   */
   public isUserLogin(): void {
     const validUser: string = JSON.parse(sessionStorage.getItem("validUser"));
     if(!isNullOrUndefined(validUser) && validUser !== "") {
