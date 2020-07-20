@@ -46,7 +46,7 @@
 
     <div class="row">
         <div [ngClass]="{'col-lg-4 col-md-4 col-sm-6 col-12 card-view': isCardView, 'grid-view col-lg-12': !isCardView}"
-            *ngFor="let album of albumsData | filter : searchText; let i=index">
+            *ngFor="let album of albumsData$ | async | filter : searchText; let i=index">
             <mat-card class="card">
                 <div class="card-body row align-items-center">
                     <div [ngClass]="{'col-lg-6 col-12': isCardView, 'col-lg-3 col-md-3 col-sm-4 col-4': !isCardView}">
